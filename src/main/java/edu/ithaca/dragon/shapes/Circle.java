@@ -10,7 +10,7 @@ public class Circle {
      */
     public Circle(double radius){
         this.radius = radius;
-        if (radius >= 0){
+        if (radius <= 0){
             throw new IllegalArgumentException();
         }
     }
@@ -35,6 +35,8 @@ public class Circle {
      * @return the longest straight line that can be drawn within this circle
      */
     public double longestLineWithin(){
-        throw new RuntimeException("Not implemented yet");
+        double diameter;
+        diameter = radius * 2;
+        return diameter;
     }
 }
