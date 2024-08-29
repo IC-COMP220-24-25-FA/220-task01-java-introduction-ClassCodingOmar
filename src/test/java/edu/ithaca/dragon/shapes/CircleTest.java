@@ -33,7 +33,8 @@ public class CircleTest {
     public void TestConstructorError(){
         assertThrows(IllegalArgumentException.class, () -> new Circle(0));
     }
-
+    
+    @Test
     public void doubleSizeTest(){
         //Creating new circle, running double function, and then checking new area
         Circle myCircle = new Circle(1);
