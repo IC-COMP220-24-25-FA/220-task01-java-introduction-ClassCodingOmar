@@ -2,7 +2,8 @@ package edu.ithaca.dragon.shapes;
 
 public class Circle {
     private double radius;
-    private static final double pi = 3.1415926;  
+    private static final double pi = 3.1415926; 
+    private static final double squareRootTwo = 1.41421356237; 
 
     /**
      * @throws IllegalArgumentException if radius is not a positive number
@@ -24,7 +25,7 @@ public class Circle {
      * @post doubles the size of this circle
      */
     public void doubleSize(){
-        throw new RuntimeException("Not implemented yet");
+         radius = radius * squareRootTwo;
     }
 
     /**
