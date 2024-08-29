@@ -10,6 +10,9 @@ public class Circle {
      */
     public Circle(double radius){
         this.radius = radius;
+        if (radius >= 0){
+            throw new IllegalArgumentException();
+        }
     }
 
     /**
