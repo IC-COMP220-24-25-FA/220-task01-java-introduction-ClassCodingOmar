@@ -11,6 +11,7 @@ public class ShapeMain {
         //Use a loop to repeat the process 5 times
         double rectangleLength;
         double rectangleWidth;
+        int randMultiplier;
 
         Rectangle rectangleArray[] = new Rectangle[5]; 
 
@@ -18,22 +19,20 @@ public class ShapeMain {
         Random rand = new Random();
 
         for(int i=0; i<5; i++){
-            rectangleLength = rand.nextDouble();
+
+            //rand.nextDouble generates a double between 0 and 1.0, we will multiple this number by a random int so that not all doubles are less than one.
+            //We set an upper bound of 998, but then add one in order to ensure we don't get a 0 integer. 
+            randMultiplier = rand.nextInt(998) + 1;
+            rectangleLength = rand.nextDouble() * randMultiplier;
             
-            while(rectangleLength <= 0){
-                rectangleLength = rand.nextDouble();
-            }
-
-            rectangleWidth = rand.nextDouble();
-
-            while(rectangleWidth <= 0){
-                rectangleWidth = rand.nextDouble();
-            }
+            rectangleWidth = rand.nextDouble() * randMultiplier;
 
             rectangleArray[i] = new Rectangle(rectangleLength, rectangleWidth);
         }
         System.out.println("The following rectangles have been created: ");
-        System.out.println();
 
+        for(int i=0; i<5; i++){
+            System.out.println(rectangleArray[i].printRectangle());
+        }
     }
 }
