@@ -37,6 +37,7 @@ public class CircleTest {
     @Test
     public void doubleSizeTest(){
         //Creating new circle, running double function, and then checking new area
+        //Doubling is defined as doubling the area
         Circle myCircle = new Circle(1);
         myCircle.doubleSize();
         assertEquals(6.2831, myCircle.calcArea(), 0.0001);
