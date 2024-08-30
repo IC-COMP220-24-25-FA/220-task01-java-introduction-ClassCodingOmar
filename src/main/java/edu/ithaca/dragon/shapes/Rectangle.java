@@ -31,7 +31,14 @@ public class Rectangle {
     }
 
     public double longestLineWithin(){
-        throw new RuntimeException("Not implemented yet");
+        //Longest line is the diagonal, formala is d = sqrt(l^2 + w^2)
+        double diagonal;
+        double diagonalSquared;
+
+        diagonalSquared = length * length + width * width;
+        diagonal = Math.sqrt(diagonalSquared);
+
+        return diagonal;
     }
     
 }
