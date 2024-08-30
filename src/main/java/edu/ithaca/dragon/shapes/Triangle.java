@@ -60,5 +60,9 @@ public class Triangle {
 
         return area;
     }
+
+    public void doubleSize(){
+        
+    }
     
 }
