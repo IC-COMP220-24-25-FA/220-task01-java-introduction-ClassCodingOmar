@@ -28,5 +28,11 @@ public class RectangleTest {
         assertEquals(8, myRectangle.calcArea());
 
     }
+
+    public void longestLineWithinTest(){
+        //Creating Rectangle and testing longestLine function.
+        Rectangle myRectangle = new Rectangle(2,2);
+        assertEquals(2.828, myRectangle.longestLineWithin(), .001);
+    }
     
 }
