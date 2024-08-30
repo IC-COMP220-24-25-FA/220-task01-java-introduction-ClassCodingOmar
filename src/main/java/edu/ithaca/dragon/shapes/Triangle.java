@@ -4,6 +4,7 @@ public class Triangle {
     private double lineOne;
     private double lineTwo;
     private double lineThree;
+    private static final double squareRootTwo = Math.sqrt(2); 
 
     public Triangle (double lineInputOne, double lineInputTwo, double lineInputThree){
         lineOne = lineInputOne;
@@ -62,7 +63,11 @@ public class Triangle {
     }
 
     public void doubleSize(){
-        
+        //To double the size of a triangle, each side must be multipled by sqrt(2).
+        lineOne = lineOne * squareRootTwo;
+        lineTwo = lineTwo * squareRootTwo;
+        lineThree = lineThree * squareRootTwo;
+
     }
     
 }
