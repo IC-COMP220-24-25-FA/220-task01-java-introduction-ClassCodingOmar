@@ -1,6 +1,8 @@
 package edu.ithaca.dragon.shapes;
 
 public class Triangle {
-    private double line1;
+    private double lineOne;
+    private double lineTwo;
+    private double lineThree;
     
 }
