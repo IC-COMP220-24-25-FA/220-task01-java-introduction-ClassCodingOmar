@@ -29,6 +29,7 @@ public class RectangleTest {
 
     }
 
+    @Test
     public void longestLineWithinTest(){
         //Creating Rectangle and testing longestLine function.
         Rectangle myRectangle = new Rectangle(2,2);
