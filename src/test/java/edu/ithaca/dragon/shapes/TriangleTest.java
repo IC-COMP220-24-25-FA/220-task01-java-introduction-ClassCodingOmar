@@ -28,5 +28,12 @@ public class TriangleTest {
 
 
     }
+
+    @Test
+    public void calcAreaTest(){
+        Triangle myTriangle = new Triangle(3,3,3);
+        assertEquals(3.8971, myTriangle.calcArea(), 0.0001);
+
+    }
     
 }

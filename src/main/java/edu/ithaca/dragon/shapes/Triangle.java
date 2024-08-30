@@ -30,5 +30,11 @@ public class Triangle {
 
 
     }
+
+    public double calcArea(){
+        double area;
+
+        return area;
+    }
     
 }
