@@ -69,5 +69,22 @@ public class Triangle {
         lineThree = lineThree * squareRootTwo;
 
     }
+
+    public double longestLineWithin(){
+        //Smarter mathmaticians have prooved that the longest line of a triangle is always one of the sides.
+        
+        double longestLine;
+        longestLine = lineOne;
+
+        if (lineTwo > longestLine){
+            longestLine = lineTwo;
+        }
+
+        if (lineThree > longestLine){
+            longestLine = lineThree;
+        }
+
+        return longestLine;
+    }
     
 }
