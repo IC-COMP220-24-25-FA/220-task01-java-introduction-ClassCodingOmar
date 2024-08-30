@@ -15,8 +15,18 @@ public class RectangleTest {
 
     @Test
     public void calcAreaTest(){
+        //Creating Rectangle and testing calc area
         Rectangle myRectangle = new Rectangle(2,2); 
         assertEquals(4,myRectangle.calcArea());
+    }
+
+    @Test
+    public void doubleSizeTest(){
+        //Creating Rectangle and testing doubleSize function.
+        Rectangle myRectangle = new Rectangle(2,2);
+        myRectangle.doubleSize();
+        assertEquals(8, myRectangle.calcArea());
+
     }
     
 }
