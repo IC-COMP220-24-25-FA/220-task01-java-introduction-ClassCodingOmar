@@ -40,5 +40,13 @@ public class Rectangle {
 
         return diagonal;
     }
+
+    public String printRectangle(){
+        String rectangleDimensions;
+        rectangleDimensions = length + " x " + width;
+
+        return rectangleDimensions;
+
+    }
     
 }
