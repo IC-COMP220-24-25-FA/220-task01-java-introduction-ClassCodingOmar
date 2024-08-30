@@ -34,6 +34,9 @@ public class TriangleTest {
         Triangle myTriangle = new Triangle(3,3,3);
         assertEquals(3.8971, myTriangle.calcArea(), 0.0001);
 
+        Triangle myTriangleTwo = new Triangle(4, 7, 9);
+        assertEquals (13.4164, myTriangleTwo.calcArea(), 0.0001);
+
     }
     
 }

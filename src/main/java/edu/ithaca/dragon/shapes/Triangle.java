@@ -33,6 +33,30 @@ public class Triangle {
 
     public double calcArea(){
         double area;
+        //To calculate a triangle's area from three sides one must follow Heron's formula:
+        //Area = squareroot(s(s-a)(s-b)(s-c)) where s is the semi-perimeter.
+        //s = (a+b+c)/2
+        //Therefore we will make a variable for the semiperimeter and perimeter just to make calculations simpler instead of nesting equations. 
+
+        double perimeter;
+        double semiperimeter;
+        perimeter = lineOne + lineTwo + lineThree;
+        semiperimeter = perimeter/2;
+
+        //To maintain simplicity of code and avoid nesting equations and potentially inducing more error, we will now initialize a few more helper variables.
+        //These aren't necessary, but it reduces risk of error in making sure equations are properly nested. Can be removed if there's optimization concerns.
+        double heronTotalValue;
+        double heronA;
+        double heronB;
+        double heronC;
+
+        heronA = semiperimeter - lineOne;
+        heronB = semiperimeter - lineTwo;
+        heronC = semiperimeter - lineThree;
+
+        heronTotalValue = semiperimeter * heronA * heronB * heronC;
+
+        area = Math.sqrt(heronTotalValue);
 
         return area;
     }
