@@ -2,6 +2,8 @@ package edu.ithaca.dragon.shapes;
 
 //Importing to create random numbers
 import java.util.Random;
+//Importing Scanner util to read inputs
+import java.util.Scanner;
 
 public class ShapeMain {
     
@@ -12,6 +14,9 @@ public class ShapeMain {
         double rectangleLength;
         double rectangleWidth;
         int randMultiplier;
+        int userInput = -1;
+
+        Scanner input = new Scanner(System.in);
 
         Rectangle rectangleArray[] = new Rectangle[5]; 
 
@@ -32,7 +37,28 @@ public class ShapeMain {
         System.out.println("The following rectangles have been created: ");
 
         for(int i=0; i<5; i++){
-            System.out.println(rectangleArray[i].printRectangle());
+            System.out.println(i+1 + ": " + rectangleArray[i].printRectangle());
+            System.out.println("The area of this rectangle is: " + rectangleArray[i].calcArea());
+            System.out.println("The longest line in this rectangle is: " + rectangleArray[i].longestLineWithin());
         }
+
+        System.out.println("Which rectangle would you like to double? (1-5)");
+        
+        while (userInput < 0 | userInput > 5){
+            try {
+                userInput = input.nextInt();
+            }
+            catch (Exception e){
+                System.out.println("Error: Must be a number");
+                input.nextLine();
+                userInput = -1;
+            }
+            if (userInput < 0 | userInput > 5){
+                System.out.println("Please enter a valid input (1-5)");
+            }
+        }
+
+        
+
     }
 }
