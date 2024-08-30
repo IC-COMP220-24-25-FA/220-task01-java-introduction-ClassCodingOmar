@@ -9,8 +9,14 @@ import org.junit.jupiter.api.Test;
 
 public class RectangleTest {
     @Test
-    public void TestConstructerError(){
+    public void testConstructerError(){
         assertThrows(IllegalArgumentException.class, () -> new Rectangle(0,0));
+    }
+
+    @Test
+    public void calcAreaTest(){
+        Rectangle myRectangle = new Rectangle(2,2); 
+        assertEquals(4,myRectangle.calcArea());
     }
     
 }
