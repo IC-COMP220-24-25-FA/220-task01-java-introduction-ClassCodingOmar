@@ -58,7 +58,15 @@ public class ShapeMain {
             }
         }
 
-        
+        rectangleArray[userInput-1].doubleSize();
+        System.out.println("You chose rectangle " + userInput);
+        for(int i=0; i<5; i++){
+            System.out.println(i+1 + ": " + rectangleArray[i].printRectangle());
+            System.out.println("The area of this rectangle is: " + rectangleArray[i].calcArea());
+            System.out.println("The longest line in this rectangle is: " + rectangleArray[i].longestLineWithin());
+        }
+
+
 
     }
 }
