@@ -26,6 +26,7 @@ public class Rectangle {
     }
 
     public void doubleSize(){
+        //Doubling length to double size of Rectangle
         length = 2 * length;
     }
 
