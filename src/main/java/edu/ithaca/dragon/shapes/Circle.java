@@ -4,7 +4,7 @@ public class Circle {
     private double radius;
     private static final double pi = 3.1415926; 
     private static final double squareRootTwo = Math.sqrt(2); 
-    //test comment to check git on laptop
+    
     /**
      * @throws IllegalArgumentException if radius is not a positive number
      */
