@@ -2,7 +2,7 @@ package edu.ithaca.dragon.shapes;
 
 public class Circle {
     private double radius;
-    private static final double pi = 3.1415926; 
+    private static final double pi = Math.PI; 
     private static final double squareRootTwo = Math.sqrt(2); 
     
     /**
