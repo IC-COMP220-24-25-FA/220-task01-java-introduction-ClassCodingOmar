@@ -75,7 +75,7 @@ public class ShapeMain {
                 System.out.println("The longest line in this rectangle is: " + formattedValue.format(rectangleArray[i].longestLineWithin()));
             }
             userInput = -1;
-    }
-
+        }
+        input.close();
     }
 }
