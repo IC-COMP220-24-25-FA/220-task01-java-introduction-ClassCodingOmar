@@ -5,6 +5,8 @@ import java.util.Random;
 //Importing Scanner util to read inputs
 import java.util.Scanner;
 
+import java.text.DecimalFormat;
+
 public class ShapeMain {
     
     public static void main(String[] args){
@@ -16,8 +18,12 @@ public class ShapeMain {
         int randMultiplier;
         int userInput = -1;
 
+        DecimalFormat formattedValue = new DecimalFormat("#.00");
+
+        //Creating scanner to read user inputs
         Scanner input = new Scanner(System.in);
 
+        //Rectangle array to store all 5 user rectangles
         Rectangle rectangleArray[] = new Rectangle[5]; 
 
         //Creating random numbers
@@ -38,35 +44,38 @@ public class ShapeMain {
 
         for(int i=0; i<5; i++){
             System.out.println(i+1 + ": " + rectangleArray[i].printRectangle());
-            System.out.println("The area of this rectangle is: " + rectangleArray[i].calcArea());
-            System.out.println("The longest line in this rectangle is: " + rectangleArray[i].longestLineWithin());
+            System.out.println("The area of this rectangle is: " + formattedValue.format(rectangleArray[i].calcArea()));
+            System.out.println("The longest line in this rectangle is: " + formattedValue.format(rectangleArray[i].longestLineWithin()));
         }
 
-        System.out.println("Which rectangle would you like to double? (1-5)");
+        for (int j=0; j<5; j++){
+            System.out.println("Which rectangle would you like to double? (1-5)");
         
-        while (userInput < 0 | userInput > 5){
-            try {
-                userInput = input.nextInt();
+            while (userInput < 0 | userInput > 5){
+                try {
+                    userInput = input.nextInt();
+                    input.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println("Error: Must be a number");
+                    input.nextLine();
+                    userInput = -1;
+                }
+                if (userInput < 0 | userInput > 5){
+                    System.out.println("Please enter a valid input (1-5)");
+                }
             }
-            catch (Exception e){
-                System.out.println("Error: Must be a number");
-                input.nextLine();
-                userInput = -1;
+
+            rectangleArray[userInput-1].doubleSize();
+            System.out.println("You chose rectangle " + userInput);
+
+            for(int i=0; i<5; i++){
+                System.out.println(i+1 + ": " + rectangleArray[i].printRectangle());
+                System.out.println("The area of this rectangle is: " + formattedValue.format(rectangleArray[i].calcArea()));
+                System.out.println("The longest line in this rectangle is: " + formattedValue.format(rectangleArray[i].longestLineWithin()));
             }
-            if (userInput < 0 | userInput > 5){
-                System.out.println("Please enter a valid input (1-5)");
-            }
-        }
-
-        rectangleArray[userInput-1].doubleSize();
-        System.out.println("You chose rectangle " + userInput);
-        for(int i=0; i<5; i++){
-            System.out.println(i+1 + ": " + rectangleArray[i].printRectangle());
-            System.out.println("The area of this rectangle is: " + rectangleArray[i].calcArea());
-            System.out.println("The longest line in this rectangle is: " + rectangleArray[i].longestLineWithin());
-        }
-
-
+            userInput = -1;
+    }
 
     }
 }

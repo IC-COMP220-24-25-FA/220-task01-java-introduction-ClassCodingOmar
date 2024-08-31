@@ -1,8 +1,10 @@
 package edu.ithaca.dragon.shapes;
-
+import java.text.DecimalFormat;
 public class Rectangle {
     private double length;
     private double width;
+
+    public static final  DecimalFormat formattedValue = new DecimalFormat("#.00");
     
 
     public Rectangle(double length, double width){
@@ -43,7 +45,7 @@ public class Rectangle {
 
     public String printRectangle(){
         String rectangleDimensions;
-        rectangleDimensions = length + " x " + width;
+        rectangleDimensions = formattedValue.format(length) + " x " + formattedValue.format(width);
 
         return rectangleDimensions;
 
