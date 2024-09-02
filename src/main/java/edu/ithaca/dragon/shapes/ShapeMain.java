@@ -4,18 +4,20 @@ package edu.ithaca.dragon.shapes;
 import java.util.Random;
 //Importing Scanner util to read inputs
 import java.util.Scanner;
-
+//Importing Number Formatter
 import java.text.DecimalFormat;
 
 public class ShapeMain {
     
     public static void main(String[] args){
-        //Make a list of 5 randomly-sized rectangles and print their area and the largest line that can be drawn through them
-        //Allow the user to choose one, double the size of that one, and print them all again
-        //Use a loop to repeat the process 5 times
+        //Declared Variables
         double rectangleLength;
         double rectangleWidth;
+
+        //randMultiplier will be used to make doubles from more than just 0-1.
         int randMultiplier;
+
+        //userInput will be used to check for proper user inputs. Set to -1 in order to fail input checks initially. 
         int userInput = -1;
 
 
@@ -28,6 +30,7 @@ public class ShapeMain {
         //Creating random numbers
         Random rand = new Random();
 
+        //For loop that will generate random doubles to populate the rectangle array
         for(int i=0; i<5; i++){
 
             //rand.nextDouble generates a double between 0 and 1.0, we will multiple this number by a random int so that not all doubles are less than one.
@@ -39,14 +42,18 @@ public class ShapeMain {
 
             rectangleArray[i] = new Rectangle(rectangleLength, rectangleWidth);
         }
-        System.out.println("The following rectangles have been created: ");
 
+        //Printing the array for the first time. 
+        System.out.println("The following rectangles have been created: ");
         printArray(rectangleArray);
 
+        //For loop asking user which rectangle they want to double and printing the new arrays 5 times
         for (int j=0; j<5; j++){
             System.out.println("Which rectangle would you like to double? (1-5)");
-        
+            
+            //While loop to catch invalid inputs
             while (userInput < 0 | userInput > 5){
+                //Try catch to get input, if input is not a number an error message will be printed, buffer is always cleared after getting the input
                 try {
                     userInput = input.nextInt();
                     input.nextLine();
@@ -56,17 +63,21 @@ public class ShapeMain {
                     input.nextLine();
                     userInput = -1;
                 }
+                //If statement to remind the user to print a valid input while the while loop is failing
                 if (userInput < 0 | userInput > 5){
                     System.out.println("Please enter a valid input (1-5)");
                 }
             }
 
+            //Doubling the selected rectangle, and printing new rectangles
             rectangleArray[userInput-1].doubleSize();
             System.out.println("You chose rectangle " + userInput);
-
             printArray(rectangleArray);
+
+            //Reseting user input
             userInput = -1;
         }
+        //Closing scanner
         input.close();
     }
 
