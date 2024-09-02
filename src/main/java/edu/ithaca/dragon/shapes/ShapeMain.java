@@ -18,7 +18,6 @@ public class ShapeMain {
         int randMultiplier;
         int userInput = -1;
 
-        DecimalFormat formattedValue = new DecimalFormat("#.00");
 
         //Creating scanner to read user inputs
         Scanner input = new Scanner(System.in);
@@ -42,11 +41,7 @@ public class ShapeMain {
         }
         System.out.println("The following rectangles have been created: ");
 
-        for(int i=0; i<5; i++){
-            System.out.println(i+1 + ": " + rectangleArray[i].printRectangle());
-            System.out.println("The area of this rectangle is: " + formattedValue.format(rectangleArray[i].calcArea()));
-            System.out.println("The longest line in this rectangle is: " + formattedValue.format(rectangleArray[i].longestLineWithin()));
-        }
+        printArray(rectangleArray);
 
         for (int j=0; j<5; j++){
             System.out.println("Which rectangle would you like to double? (1-5)");
@@ -69,13 +64,27 @@ public class ShapeMain {
             rectangleArray[userInput-1].doubleSize();
             System.out.println("You chose rectangle " + userInput);
 
-            for(int i=0; i<5; i++){
-                System.out.println(i+1 + ": " + rectangleArray[i].printRectangle());
-                System.out.println("The area of this rectangle is: " + formattedValue.format(rectangleArray[i].calcArea()));
-                System.out.println("The longest line in this rectangle is: " + formattedValue.format(rectangleArray[i].longestLineWithin()));
-            }
+            printArray(rectangleArray);
             userInput = -1;
         }
         input.close();
+    }
+
+    //Helper function to print array
+    public static void printArray(Rectangle rectangleArray[]){
+        
+        //Creating a number format to remove excess decimals
+        DecimalFormat formattedValue = new DecimalFormat("#.00");
+        //Creating variable to print in place of i, since math arguments were getting confused in println function.
+        int printValue;
+
+        for(int i=0; i<5; i++){
+            printValue = i+1;
+            System.out.println("Rectangle " + printValue + ": ");
+            System.out.println("Dimensions: " + rectangleArray[i].printRectangle());
+            System.out.println("Area: " + formattedValue.format(rectangleArray[i].calcArea()));
+            System.out.println("Longest Line: " + formattedValue.format(rectangleArray[i].longestLineWithin()) + '\n');
+        }
+
     }
 }
