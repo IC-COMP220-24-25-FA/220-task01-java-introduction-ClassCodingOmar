@@ -50,5 +50,12 @@ public class Rectangle {
         return rectangleDimensions;
 
     }
+
+    public String toString(){
+        String toStringFormat;
+        toStringFormat = "Rectangle with Length: " + formattedValue.format(length) + " and Width: " +formattedValue.format(width);
+        
+        return toStringFormat;
+    }
     
 }

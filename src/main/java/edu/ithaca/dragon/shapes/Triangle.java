@@ -1,10 +1,13 @@
 package edu.ithaca.dragon.shapes;
+import java.text.DecimalFormat;
 
 public class Triangle {
     private double lineOne;
     private double lineTwo;
     private double lineThree;
     private static final double squareRootTwo = Math.sqrt(2); 
+
+    public static final  DecimalFormat formattedValue = new DecimalFormat("#.00");
 
     public Triangle (double lineInputOne, double lineInputTwo, double lineInputThree){
         lineOne = lineInputOne;
@@ -85,6 +88,13 @@ public class Triangle {
         }
 
         return longestLine;
+    }
+
+    public String toString(){
+        String toStringFormat;
+        toStringFormat = "Triangle with Side One: " + formattedValue.format(lineOne) + " Side Two: " + formattedValue.format(lineTwo) + " and Side Three: " + formattedValue.format(lineThree);
+        
+        return toStringFormat;
     }
     
 }

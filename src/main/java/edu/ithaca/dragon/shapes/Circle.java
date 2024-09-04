@@ -1,9 +1,12 @@
 package edu.ithaca.dragon.shapes;
+import java.text.DecimalFormat;
 
 public class Circle {
     private double radius;
     private static final double pi = Math.PI; 
     private static final double squareRootTwo = Math.sqrt(2); 
+
+    public static final  DecimalFormat formattedValue = new DecimalFormat("#.00");
 
     /**
      * @throws IllegalArgumentException if radius is not a positive number
@@ -38,5 +41,12 @@ public class Circle {
         double diameter;
         diameter = radius * 2;
         return diameter;
+    }
+
+    public String toString(){
+        String toStringFormat;
+        toStringFormat = "Circle with Radius: " + formattedValue.format(radius);
+
+        return toStringFormat;
     }
 }
