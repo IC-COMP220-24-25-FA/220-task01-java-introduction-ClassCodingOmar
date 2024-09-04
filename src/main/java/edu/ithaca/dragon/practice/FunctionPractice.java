@@ -47,6 +47,11 @@ public class FunctionPractice {
             return -1;
         }
 
+        //Checking for one unit index
+        if(numbers.size() == 1){
+            return 0;
+        }
+
         for (int i=1;i<(numbers.size());i++){
             if (numbers.get(i) > numbers.get(largestIndex) ){
                 largestIndex = i;
@@ -66,6 +71,11 @@ public class FunctionPractice {
         //Checking for empty index
         if (numbers.isEmpty()){
             return -1;
+        }
+
+        //Checking for one unit index
+        if(numbers.size() == 1){
+            return 0;
         }
 
         for (int i=1;i<(numbers.size());i++){
