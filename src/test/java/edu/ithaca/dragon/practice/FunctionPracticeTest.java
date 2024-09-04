@@ -24,26 +24,28 @@ public class FunctionPracticeTest {
 
     @Test
     public void calcSalePriceTest(){
+        //Expecting inputs in the following format(Price, percentage in form of out of 100 ergo 50 for 50%, tax in form of out of 100 ergo 50 for 50%)
+        assertEquals(FunctionPractice.calcSalePrice(100,0,0),100);
+        assertEquals(FunctionPractice.calcSalePrice(100,50,10), 55);
+    }
+
+    @Test
+    public void isGoodDogTest(){
         fail("Not implemented yet");
     }
 
     @Test
-    public void isGoodDog(){
+    public void findFirstLargestTest(){
         fail("Not implemented yet");
     }
 
     @Test
-    public void findFirstLargest(){
+    public void findLastLargetTest(){
         fail("Not implemented yet");
     }
 
     @Test
-    public void findLastLarget(){
-        fail("Not implemented yet");
-    }
-
-    @Test
-    public void findFirstMostOccurencesOfLetter(){
+    public void findFirstMostOccurencesOfLetterTest(){
         fail("not implemented yet");
     }
     
