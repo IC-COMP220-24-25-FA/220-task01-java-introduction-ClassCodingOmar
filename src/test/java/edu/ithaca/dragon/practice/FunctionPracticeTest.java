@@ -31,7 +31,9 @@ public class FunctionPracticeTest {
 
     @Test
     public void isGoodDogTest(){
-        fail("Not implemented yet");
+        //Dogs are always good
+        assertEquals(FunctionPractice.isGoodDog(5,3,true),true);
+        assertEquals(FunctionPractice.isGoodDog(2,5,false),true);
     }
 
     @Test
