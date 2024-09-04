@@ -6,10 +6,19 @@ import java.util.Random;
 import java.util.Scanner;
 //Importing Number Formatter
 import java.text.DecimalFormat;
+//Importing Lists
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ShapeMain {
     
     public static void main(String[] args){
+        //New code for interface use
+        int selectedShape;
+        List<Shape> shapeArray = new ArrayList<Shape>();
+
+
         //Declared Variables
         double rectangleLength;
         double rectangleWidth;
