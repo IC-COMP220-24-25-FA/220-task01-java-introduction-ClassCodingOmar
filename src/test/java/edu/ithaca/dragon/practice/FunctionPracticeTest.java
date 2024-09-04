@@ -26,5 +26,25 @@ public class FunctionPracticeTest {
     public void calcSalePriceTest(){
         fail("Not implemented yet");
     }
+
+    @Test
+    public void isGoodDog(){
+        fail("Not implemented yet");
+    }
+
+    @Test
+    public void findFirstLargest(){
+        fail("Not implemented yet");
+    }
+
+    @Test
+    public void findLastLarget(){
+        fail("Not implemented yet");
+    }
+
+    @Test
+    public void findFirstMostOccurencesOfLetter(){
+        fail("not implemented yet");
+    }
     
 }
