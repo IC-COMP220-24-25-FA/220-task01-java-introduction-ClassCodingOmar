@@ -1,6 +1,7 @@
 package edu.ithaca.dragon.shapes;
 import java.text.DecimalFormat;
-public class Rectangle {
+
+public class Rectangle implements Shape{
     private double length;
     private double width;
 

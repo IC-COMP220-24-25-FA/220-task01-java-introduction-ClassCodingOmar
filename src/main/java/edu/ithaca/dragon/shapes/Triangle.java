@@ -1,7 +1,7 @@
 package edu.ithaca.dragon.shapes;
 import java.text.DecimalFormat;
 
-public class Triangle {
+public class Triangle implements Shape {
     private double lineOne;
     private double lineTwo;
     private double lineThree;

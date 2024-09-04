@@ -1,7 +1,7 @@
 package edu.ithaca.dragon.shapes;
 import java.text.DecimalFormat;
 
-public class Circle {
+public class Circle implements Shape {
     private double radius;
     private static final double pi = Math.PI; 
     private static final double squareRootTwo = Math.sqrt(2); 
