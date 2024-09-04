@@ -56,13 +56,13 @@ public class FunctionPracticeTest {
     public void findLastLargetTest(){
         List<Integer> testList = new ArrayList<Integer>();
         //Returning value of -1 for empty list
-        assertEquals(FunctionPractice.findFirstLargest(testList),-1);
+        assertEquals(FunctionPractice.findLastLargest(testList),-1);
         //Testing with values
         Collections.addAll(testList, 1,4,6,2,4);
-        assertEquals(FunctionPractice.findFirstLargest(testList),2);
+        assertEquals(FunctionPractice.findLastLargest(testList),2);
         testList.clear();
         Collections.addAll(testList,0,0,0,0,0);
-        assertEquals(FunctionPractice.findFirstLargest(testList),4);
+        assertEquals(FunctionPractice.findLastLargest(testList),4);
     }
 
     @Test
