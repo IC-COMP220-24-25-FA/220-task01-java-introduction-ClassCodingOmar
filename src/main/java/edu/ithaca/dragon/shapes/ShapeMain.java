@@ -9,7 +9,6 @@ import java.text.DecimalFormat;
 //Importing Lists
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ShapeMain {
     
@@ -17,8 +16,52 @@ public class ShapeMain {
         //New code for interface use
         int selectedShape;
         List<Shape> shapeArray = new ArrayList<Shape>();
+        //Creating seperate rand object, to prevent disturbing old code
+        Random rand2 = new Random();
+        //Similar story for all the other repeated variables from later in the code
+        int randMultiplier2;
+
+        //Boolean to check for valid shapes in the event of triangle construction
+        boolean validShape = false;
+
+        //For loop creating and printing initial loop
+        for (int i=0;i<10;i++){
+            //Random int (0-2) generated to determine shape type
+            selectedShape = rand2.nextInt(3);
+            randMultiplier2 = rand2.nextInt(998) + 1;
+            if (selectedShape == 0){
+                shapeArray.add(i, new Circle((randMultiplier2*rand2.nextDouble())));
+            }
+            if (selectedShape == 1){
+                shapeArray.add(i, new Rectangle((randMultiplier2*rand2.nextDouble()), (randMultiplier2*rand2.nextDouble())));
+            }
+            if (selectedShape == 2){
+                //While loop with try catch until a valid triangle is created
+                while (validShape == false){
+                    try{
+                        shapeArray.add(i, new Triangle((randMultiplier2*rand2.nextDouble()), (randMultiplier2*rand2.nextDouble()), (randMultiplier2*rand2.nextDouble())));
+                        validShape = true;
+                    }
+                    catch(Exception e){
+
+                    }
+                }
+                validShape = false;
+            }
+            //Printing 
+            System.out.println(shapeArray.get(i).toString());
+        }
+
+        //Doubling each element and printing again
+        for (int i=0;i<10;i++){
+            shapeArray.get(i).doubleSize();
+            System.out.println(shapeArray.get(i).toString());
+        }
 
 
+
+
+        //OLD Rectangle Printer Begins
         //Declared Variables
         double rectangleLength;
         double rectangleWidth;
