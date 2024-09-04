@@ -33,5 +33,11 @@ public class RectangleTest {
         Rectangle myRectangle = new Rectangle(2,2);
         assertEquals(2.828, myRectangle.longestLineWithin(), .001);
     }
+
+    @Test
+    public void printRectangleTest(){
+        Rectangle myRectangle = new Rectangle(3,5);
+        assertEquals("3.0 x 5.0", myRectangle.printRectangle());
+    }
     
 }

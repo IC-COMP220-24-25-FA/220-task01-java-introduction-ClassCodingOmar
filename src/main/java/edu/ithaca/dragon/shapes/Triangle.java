@@ -1,9 +1,13 @@
 package edu.ithaca.dragon.shapes;
+import java.text.DecimalFormat;
 
-public class Triangle {
+public class Triangle implements Shape {
     private double lineOne;
     private double lineTwo;
     private double lineThree;
+    private static final double squareRootTwo = Math.sqrt(2); 
+
+    public static final  DecimalFormat formattedValue = new DecimalFormat("#.00");
 
     public Triangle (double lineInputOne, double lineInputTwo, double lineInputThree){
         lineOne = lineInputOne;
@@ -14,17 +18,17 @@ public class Triangle {
             throw new IllegalArgumentException("Side lengths must be greater than 0.");
         }
 
-        //Triangles must satisfying the rule: No side of any triangle can be longer than the other two lines added together.
+        //Triangles must satisfy the rule: No side of any triangle can be longer than the other two lines added together.
 
-        if (lineOne > lineTwo + lineThree){
+        if (lineOne >= lineTwo + lineThree){
             throw new IllegalArgumentException("Side length one is too long.");
         }
 
-        if (lineTwo > lineThree + lineOne){
+        if (lineTwo >= lineThree + lineOne){
             throw new IllegalArgumentException("Side length two is too long.");
         }
 
-        if (lineThree > lineOne + lineTwo){
+        if (lineThree >= lineOne + lineTwo){
             throw new IllegalArgumentException("Side length three is too long.");
         }
 
@@ -62,7 +66,35 @@ public class Triangle {
     }
 
     public void doubleSize(){
+        //To double the size of a triangle, each side must be multipled by sqrt(2).
+        lineOne = lineOne * squareRootTwo;
+        lineTwo = lineTwo * squareRootTwo;
+        lineThree = lineThree * squareRootTwo;
+
+    }
+
+    public double longestLineWithin(){
+        //Smarter mathmaticians have proved that the longest line of a triangle is always one of the sides.
         
+        double longestLine;
+        longestLine = lineOne;
+
+        if (lineTwo > longestLine){
+            longestLine = lineTwo;
+        }
+
+        if (lineThree > longestLine){
+            longestLine = lineThree;
+        }
+
+        return longestLine;
+    }
+
+    public String toString(){
+        String toStringFormat;
+        toStringFormat = "Triangle with Side One: " + formattedValue.format(lineOne) + " Side Two: " + formattedValue.format(lineTwo) + " and Side Three: " + formattedValue.format(lineThree);
+        
+        return toStringFormat;
     }
     
 }
