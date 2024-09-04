@@ -47,8 +47,8 @@ public class FunctionPractice {
             return -1;
         }
 
-        for (int i=1;i<(numbers.size()-1);i++){
-            if (numbers.get(i) > numbers.get(i-1) ){
+        for (int i=1;i<(numbers.size());i++){
+            if (numbers.get(i) > numbers.get(largestIndex) ){
                 largestIndex = i;
             }
         }
@@ -68,8 +68,8 @@ public class FunctionPractice {
             return -1;
         }
 
-        for (int i=1;i<(numbers.size()-1);i++){
-            if (numbers.get(i) >= numbers.get(i-1) ){
+        for (int i=1;i<(numbers.size());i++){
+            if (numbers.get(i) >= numbers.get(largestIndex) ){
                 largestIndex = i;
             }
         }
