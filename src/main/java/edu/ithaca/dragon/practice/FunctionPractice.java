@@ -92,7 +92,34 @@ public class FunctionPractice {
      * @throws 
      */
     public static String findFirstMostOccurencesOfLetter(List<String> words, char letter){
-        throw new RuntimeException("Not Implemented");
+        if(words.size() == 0){
+            throw new IllegalArgumentException();
+        }
+
+        String finalWord = "";
+        String tempWord = "";
+        int letterCount = 0;
+        int finalLetterCount = 0;
+        for (int i=0;i<words.size();i++){
+            for(int j=0;j<words.get(i).length();j++){
+                if (words.get(i).toLowerCase().charAt(j)==letter){
+                    tempWord = words.get(i);
+                    letterCount++; 
+                }
+            }
+
+            if (letterCount > finalLetterCount){
+                finalLetterCount = letterCount;
+                finalWord = tempWord;
+            }
+            letterCount = 0;
+        }
+
+        if (finalLetterCount == 0){
+            throw new IllegalArgumentException();
+        }
+
+        return finalWord;
     }
 
 

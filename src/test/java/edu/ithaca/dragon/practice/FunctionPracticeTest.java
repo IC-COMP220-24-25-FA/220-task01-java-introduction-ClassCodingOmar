@@ -69,12 +69,13 @@ public class FunctionPracticeTest {
         //Checking for empty strings error
         assertThrows(IllegalArgumentException.class, () -> FunctionPractice.findFirstMostOccurencesOfLetter(testList, 'a'));
         //Testing various use cases
-        Collections.addAll(testList, "This", "Is", "A", "List", "Of","Testing", "Words");
+        Collections.addAll(testList, "This", "Is", "A", "List", "Of","Testing", "Words", "Threatening");
         //Throwing an error if character never appears
         assertThrows(IllegalArgumentException.class, () -> FunctionPractice.findFirstMostOccurencesOfLetter(testList, 'z'));
         
         assertEquals(FunctionPractice.findFirstMostOccurencesOfLetter(testList,'a'),"A");
         assertEquals(FunctionPractice.findFirstMostOccurencesOfLetter(testList,'t'),"Testing");
+        assertEquals(FunctionPractice.findFirstMostOccurencesOfLetter(testList,'n'),"Threatening");
     }
     
 }
